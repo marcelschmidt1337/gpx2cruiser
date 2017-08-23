@@ -1,7 +1,7 @@
 using AppKit;
 using Foundation;
 
-namespace GPX2Cruiser
+namespace GPX2Cruiser.MacOS
 {
     [Register("AppDelegate")]
     public partial class AppDelegate : NSApplicationDelegate

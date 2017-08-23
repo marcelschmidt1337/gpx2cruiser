@@ -1,6 +1,6 @@
 ﻿using AppKit;
 
-namespace GPX2Cruiser
+namespace GPX2Cruiser.MacOS
 {
     static class MainClass
     {

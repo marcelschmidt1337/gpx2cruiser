@@ -7,7 +7,7 @@
 using Foundation;
 using System.CodeDom.Compiler;
 
-namespace GPX2Cruiser
+namespace GPX2Cruiser.MacOS
 {
 	partial class AppDelegate
 	{

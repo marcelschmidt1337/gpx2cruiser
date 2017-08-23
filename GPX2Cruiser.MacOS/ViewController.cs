@@ -2,7 +2,7 @@
 using AppKit;
 using Foundation;
 
-namespace GPX2Cruiser
+namespace GPX2Cruiser.MacOS
 {
     public partial class ViewController : NSViewController
     {
