@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -11,6 +11,8 @@
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,11 +30,13 @@
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
     <PlatformTarget>anycpu</PlatformTarget>
-    <MonoBundlingExtraArgs></MonoBundlingExtraArgs>
+    <MonoBundlingExtraArgs>
+    </MonoBundlingExtraArgs>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType></DebugType>
+    <DebugType>
+    </DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
@@ -45,15 +49,20 @@
     <UseRefCounting>true</UseRefCounting>
     <LinkMode>Full</LinkMode>
     <PlatformTarget>anycpu</PlatformTarget>
-    <CodeSignEntitlements></CodeSignEntitlements>
-    <CodeSignResourceRules></CodeSignResourceRules>
-    <HttpClientHandler></HttpClientHandler>
-    <NoWarn></NoWarn>
+    <CodeSignEntitlements>
+    </CodeSignEntitlements>
+    <CodeSignResourceRules>
+    </CodeSignResourceRules>
+    <HttpClientHandler>
+    </HttpClientHandler>
+    <NoWarn>
+    </NoWarn>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
     <LangVersion>Default</LangVersion>
     <NoStdLib>false</NoStdLib>
-    <WarningsNotAsErrors></WarningsNotAsErrors>
+    <WarningsNotAsErrors>
+    </WarningsNotAsErrors>
     <CodeSigningKey>Mac Developer</CodeSigningKey>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
   </PropertyGroup>
@@ -109,4 +118,11 @@
   </ItemGroup>
   <Import Project="..\GPX2Cruiser.Shared\GPX2Cruiser.Shared.projitems" Label="Shared" Condition="Exists('..\GPX2Cruiser.Shared\GPX2Cruiser.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+  <Import Project="..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets'))" />
+  </Target>
 </Project>

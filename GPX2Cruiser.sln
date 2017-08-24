@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPX2Cruiser.MacOS", "GPX2Cruiser.MacOS\GPX2Cruiser.MacOS.csproj", "{2A71CB78-5B76-4AB4-993F-4C5E2C42C01C}"
 EndProject
@@ -11,6 +11,7 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		GPX2Cruiser.Shared\GPX2Cruiser.Shared.projitems*{1a6cb4b7-b921-4bcb-9882-b2a166c229cf}*SharedItemsImports = 13
+		GPX2Cruiser.Shared\GPX2Cruiser.Shared.projitems*{2242da42-4dca-42bc-acdf-1c993360f2d4}*SharedItemsImports = 4
 		GPX2Cruiser.Shared\GPX2Cruiser.Shared.projitems*{2a71cb78-5b76-4ab4-993f-4c5e2c42c01c}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,5 +30,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11344C6D-A01A-48BA-96AA-FE9975D87088}
 	EndGlobalSection
 EndGlobal
