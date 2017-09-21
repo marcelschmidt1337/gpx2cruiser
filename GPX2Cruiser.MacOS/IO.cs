@@ -12,11 +12,11 @@ namespace GPX2Cruiser.MacOS
             dialogue.CanChooseDirectories = false;
             dialogue.AllowedFileTypes = new string[] { "gpx" };
 
-            if(dialogue.RunModal() == (long)NSModalResponse.OK)
+            if (dialogue.RunModal() == (long)NSModalResponse.OK)
             {
                 var url = dialogue.Url;
 
-                if(url != null)
+                if (url != null)
                 {
                     return url.Path;
                 }
@@ -33,20 +33,20 @@ namespace GPX2Cruiser.MacOS
             dialogue.CanCreateDirectories = true;
             dialogue.NameFieldStringValue = fileName;
 
-			dialogue.AllowedFileTypes = new string[] { "cruiser" };
+            dialogue.AllowedFileTypes = new string[] { "cruiser" };
 
-			if (dialogue.RunModal() == (long)NSModalResponse.OK)
-			{
-				var url = dialogue.Url;
+            if (dialogue.RunModal() == (long)NSModalResponse.OK)
+            {
+                var url = dialogue.Url;
 
-				if (url != null)
-				{
-					return url.Path;
-				}
-				return string.Empty;
-			}
+                if (url != null)
+                {
+                    return url.Path;
+                }
+                return string.Empty;
+            }
 
-			return string.Empty;
+            return string.Empty;
         }
     }
 }

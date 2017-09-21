@@ -29,11 +29,11 @@ namespace GPX2Cruiser.Shared.Model
             set { FR = value == true ? (int)Value.Forbid : (int)Value.Allow; }
         }
 
-		[JsonIgnore]
-		public bool ForbidTollRoads 
+        [JsonIgnore]
+        public bool ForbidTollRoads
         {
             get { return TR == (int)Value.Forbid; }
             set { TR = value == true ? (int)Value.Forbid : (int)Value.Allow; }
         }
-	}
+    }
 }

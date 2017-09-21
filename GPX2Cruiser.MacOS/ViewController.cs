@@ -20,7 +20,7 @@ namespace GPX2Cruiser.MacOS
             option_fr.Activated += SetSettingsValue;
             option_tr.Activated += SetSettingsValue;
             save_file.Activated += SaveFile;
-		}
+        }
 
         public override NSObject RepresentedObject
         {
@@ -35,46 +35,46 @@ namespace GPX2Cruiser.MacOS
             }
         }
 
-        private void SetSettingsValue (object sender, EventArgs e)
+        private void SetSettingsValue(object sender, EventArgs e)
         {
             var cb = sender as NSButton;
 
-            if(cb.Tag == 0)
+            if (cb.Tag == 0)
             {
                 throw new NotImplementedException();
             }
-            else if(cb.Tag == 1)
+            else if (cb.Tag == 1)
             {
                 GPX2Cruiser.Settings.ForbidTollRoads = cb.State == NSCellStateValue.On;
             }
-            else if(cb.Tag == 2)
+            else if (cb.Tag == 2)
             {
-				GPX2Cruiser.Settings.ForbidFerries = cb.State == NSCellStateValue.On;
-			}
+                GPX2Cruiser.Settings.ForbidFerries = cb.State == NSCellStateValue.On;
+            }
         }
 
         partial void open_file(Foundation.NSObject sender)
         {
             var path = IO.ShowOpenFileDialogue();
-            if(!string.IsNullOrEmpty(path))
+            if (!string.IsNullOrEmpty(path))
             {
-				GPX2Cruiser.OpenFile(path);
-			}
+                GPX2Cruiser.OpenFile(path);
+            }
 
             save_file.Enabled = GPX2Cruiser.HasLoadedValidRoute;
             status_route.StringValue = GPX2Cruiser.HasLoadedValidRoute ? "Route found!" : "Invalid route!";
 
             status_wp.StringValue = string.Format("Waypoints: {0}", GPX2Cruiser.LoadedWayPoints);
             status_wp.Hidden = !GPX2Cruiser.HasLoadedValidRoute;
-		}
+        }
 
         private void SaveFile(object sender, EventArgs e)
         {
             var path = IO.ShowSaveFileDialogue(GPX2Cruiser.LoadedFileName);
-            if(!string.IsNullOrEmpty(path))
+            if (!string.IsNullOrEmpty(path))
             {
-			  GPX2Cruiser.Export(path);
-			}
-		}
+                GPX2Cruiser.Export(path);
+            }
+        }
     }
 }

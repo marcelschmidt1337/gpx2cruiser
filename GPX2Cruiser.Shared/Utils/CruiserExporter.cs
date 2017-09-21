@@ -21,14 +21,14 @@ namespace GPX2Cruiser.Shared.Utils
                 wps.Clear();
 
                 for (int j = 0; j + i * MAX_WPS < waypoints.Count && j < MAX_WPS; j++)
-				{
+                {
                     wps.Add(waypoints[j + i * MAX_WPS]);
-				}
+                }
 
                 route.Waypoints = wps;
 
-				var wrapper = new { route = route };
-				var content = JsonConvert.SerializeObject(wrapper);
+                var wrapper = new { route = route };
+                var content = JsonConvert.SerializeObject(wrapper);
 
                 var filePath = path;
                 if (fileAmount > 1)
@@ -38,7 +38,7 @@ namespace GPX2Cruiser.Shared.Utils
                 }
 
                 File.WriteAllText(filePath, content);
-			}
+            }
         }
     }
 }

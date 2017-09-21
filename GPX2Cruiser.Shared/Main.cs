@@ -7,10 +7,10 @@ namespace GPX2Cruiser.Shared
     public class Main
     {
         public string LoadedFileName { get; private set; }
-        public bool HasLoadedValidRoute { get { return waypoints != null && waypoints.Count >= 2; }}
+        public bool HasLoadedValidRoute { get { return waypoints != null && waypoints.Count >= 2; } }
         public int LoadedWayPoints { get { return HasLoadedValidRoute ? waypoints.Count : 0; } }
 
-		public Settings Settings = new Settings();
+        public Settings Settings = new Settings();
 
         private List<Waypoint> waypoints;
 
@@ -18,7 +18,7 @@ namespace GPX2Cruiser.Shared
         {
             waypoints = GpxLoader.LoadWaypoints(path);
 
-            if(HasLoadedValidRoute)
+            if (HasLoadedValidRoute)
             {
                 LoadedFileName = System.IO.Path.GetFileNameWithoutExtension(path);
             }
@@ -35,5 +35,5 @@ namespace GPX2Cruiser.Shared
                 CruiserExporter.SaveRoute(path, route, waypoints);
             }
         }
-	}
+    }
 }
